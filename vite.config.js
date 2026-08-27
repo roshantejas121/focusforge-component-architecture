@@ -3,5 +3,8 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   base: "/focusforge-component-architecture/",
+  preview: {
+    allowedHosts: true,
+  },
   plugins: [react()],
 });
