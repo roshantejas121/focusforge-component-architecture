@@ -4,12 +4,13 @@
 
 `DashboardPage.jsx` originally combined all dashboard state, derived values, event handlers, layout markup, visual styling, and task-row details in a single component. The page worked, but the mixed responsibilities made focused changes risky and prevented the task row and stat card from being reused independently.
 
-The refactor keeps the existing behavior and inline styling intact while making the page a state owner and composer. `DashboardPage.jsx` now contains state declarations, values derived from state, state-updating handlers, and the composition of focused child components.
+The refactor keeps the existing behavior and inline styling intact while making the page a state owner and composer. `DashboardPage.jsx` now contains state declarations, values derived from state, state-updating handlers, and the composition of focused child components. The page shell itself is represented by `DashboardLayout`, so the page file contains no raw visual layout markup.
 
 ## Component Responsibilities
 
 | Component | Location | Responsibility | Props |
 | --- | --- | --- | --- |
+| `DashboardLayout` | `components/dashboard/` | Owns the dashboard page shell and centered content container. | `children` |
 | `DashboardHeader` | `components/dashboard/` | Renders the FocusForge brand, greeting, and user avatar for the dashboard header. | None; the current header is static. |
 | `StatsRow` | `components/dashboard/` | Arranges the four dashboard metrics and passes their values to reusable stat cards. | `totalCount`, `completedCount`, `remainingCount`, `progressPercent` |
 | `AddTaskInput` | `components/dashboard/` | Renders the add-task form controls and delegates text changes and submission to the page. | `value`, `onChange`, `onAdd` |
