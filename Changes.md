@@ -43,4 +43,4 @@ The application was verified with the production build command:
 npm run build
 ```
 
-Live deployment: **[to be added after deployment]**
+Live deployment: **https://4173-izvat0eykyy2d0rybfgzd-ba5d1d89.sg1.manus.computer**
